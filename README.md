@@ -7,13 +7,13 @@ We&#39;re going to explore a website that you run right on your desktop today. U
 
     a.  How would you expand the game? What options or settings could you add? 
 
-3.  Using this documentation https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction to guide you: 
+3.  Using this documentation https://developer.mozilla.org/en-US/docs/W eb/API/Document_Object_Model/Introduction to guide you: 
 
     a.  What is the DOM?
 
     b.  When is the DOM different than HTML?
 
-    c.  What is the state of the DOM when you first load the page?
+    c.  What is the state of the DOM when you first load the page? 
 
     d.  What is the state of the DOM if you turn off JavaScript and refresh the page? 
 

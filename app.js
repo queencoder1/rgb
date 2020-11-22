@@ -1,3 +1,4 @@
+//Declaring variables to be used 
 var numSquares = 6;
 var colors = [];
 var pickedColor;
@@ -12,6 +13,8 @@ var scoreDisplay = document.querySelector("#scoreDisplay");
 var resetPressed = true; 
 
 
+//function to initialize the game; setup functions for the score, buttons and squares; and set the score to zero to begin or if on a reset to keep
+//running score from previous game 
 init();
 
 function init(){
@@ -27,7 +30,7 @@ function init(){
 	}
 	reset();
 }
-
+//function for buttons if selected remove incorrect squares; easy and hard functionality
 function setupModeButtons(){
 	for(var i = 0; i < modeButtons.length; i++){
 		modeButtons[i].addEventListener("click", function(){
@@ -40,6 +43,7 @@ function setupModeButtons(){
 	}
 }
 
+//setting up the squares
 function setupSquares(){
 	for(var i = 0; i < squares.length; i++){
 	//add click listeners to squares
@@ -71,7 +75,9 @@ function setupSquares(){
 	}
 }
 
-
+// a asychronous function to update the color names using an api to read from a database of colors
+//directed to follow the api site; function to get a new color option and await the results before 
+//displaying; if matches display the color and ish 
 async function updateColorName(){
 	const regex = /\([^\)]+\)/g; 
 	var rgbColors = pickedColor.match(regex); 
@@ -91,7 +97,7 @@ async function updateColorName(){
 		colorDisplay.textContent = colorData.name.value + "-ish"; 
 	}
 }
-
+//function to reset the game; 
 function reset(){
 	resetPressed = true;
 	colors = generateRandomColors(numSquares);
@@ -112,11 +118,11 @@ function reset(){
 	}
 	h1.style.background = "steelblue";
 }
-
+//background color for h1
 resetButton.addEventListener("click", function(){
 	reset();
 })
-
+//reset button when clicked
 function changeColors(color){
 	//loop through all squares
 	for(var i = 0; i < squares.length; i++){
@@ -124,7 +130,7 @@ function changeColors(color){
 		squares[i].style.background = color;
 	}
 }
-
+//functions to generate colors
 function pickColor(){
 	var random = Math.floor(Math.random() * colors.length);
 	return colors[random];
